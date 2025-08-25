@@ -1,17 +1,22 @@
-# ライブラリ
+
+# library -----------------------------------------------------------------
+
 library(pacman)
 pacman::p_load(tidyverse, haven)
 
-library(ggplot2)
 
-#データ
+# load data ---------------------------------------------------------------
+
 df <- read_dta("data/raw/artist_reputation_main.dta")
 
 
-# データの整形
-# sample = 1のみ
+# clean data --------------------------------------------------------------
+
 df_cleaned <- df %>% 
   filter(sample == 1)
 
-#データの保存
+
+# save data ---------------------------------------------------------------
+
 saveRDS(df_cleaned, "data/cleaned/df_cleaned.rds")
+

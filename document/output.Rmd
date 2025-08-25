@@ -1,0 +1,72 @@
+---
+title: "Group 2"
+output: html_document
+date: "2025-08-25"
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(pacman) 
+pacman::p_load(tidyverse, haven, fixest, broom)
+
+source("code/function.R")
+```
+
+
+
+# Fig 1
+```{r fig1_artist}
+function1(df_cleaned, artist, "All Artists")
+```
+
+
+```{r fig1_painter}
+function1(df_cleaned, painter, "Painters")
+```
+
+
+```{r fig1_musiciancomposer}
+function1(df_cleaned, musiciancomposer, "Musicians")
+
+```
+
+
+```{r fig1_writer}
+function1(df_cleaned, writer, "Writers")
+```
+
+
+```{r fig1_other_artist}
+function1(df_cleaned, other_artist, "Other Artists")
+```
+
+# Fig 2
+```{r fig2}
+function2(df_cleaned)
+```
+# Fig 3
+```{r fig3_a}
+function3_a(df_cleaned)
+```
+```{r fig3_b}
+function3_b(df_cleaned)
+```
+
+# Fig 4
+
+論文のプロットを再現することができませんでした。
+
+```{r fig4}
+function4(df_cleaned4)
+```
+
+# Fig 5
+
+論文のプロットを再現することができませんでした。
+
+```{r fig5_top50}
+function5(df_cleaned5_1,"Top 50")
+```
+```{r fig5_top500}
+function5(df_cleaned5_2, "Top 500")
+```
+
