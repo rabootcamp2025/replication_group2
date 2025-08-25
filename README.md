@@ -1,1 +1,3 @@
 # replication_group2
+
+documentファイル内のRmdファイル単体を実行することで、出力結果を見ることができます。
