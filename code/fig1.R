@@ -11,13 +11,15 @@ df_cleaned <- readRDS("data/cleaned/df_cleaned.rds")
 
 # 固定効果モデル -----------------------------------------------------------------
 
+#データの読み込み
 df_cleaned_artist <- df_cleaned %>% 
   filter(artist == 1) 
 
-
+# 説明変数の抽出
 formula_vars <- names(df_cleaned)[str_detect(names(df_cleaned), "year_after_death_")]
 formula_vars <- formula_vars[c(2:11, 51:56)]
 
+# 
 formula <- as.formula(
   paste("reputation ~ ",
         paste(formula_vars, collapse = " + ") ,"|id_final"
@@ -29,7 +31,7 @@ model <- feols(
   data = df_cleaned_artist,
   cluster = "id_final"
 )
-summary
+
 
 
 
@@ -91,12 +93,7 @@ test %>%
   scale_x_continuous(limits = c(-31, 101), breaks = seq(-30, 90, 20)) +
   scale_y_continuous(limits = c(-1, 1), breaks = seq(-1, 1, 2))
 
-# yearというカラムを作成する
-# casewhenでyear_after_death_から始まる場合はそのままの数をyearとする。
-# year_after_death_mから始まる場合は、-1をかけた数をyearとする
 
-
-# 死亡時
 
 
 
